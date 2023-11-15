@@ -4,7 +4,7 @@ from flask import Flask, request, jsonify, render_template
 import pickle
 
 app = Flask(__name__)
-model = pickle.load(open('models/titanic_model.pkl', 'rb'))
+model = pickle.load(open('model.pkl', 'rb'))
 
 
 @app.route('/')
@@ -15,9 +15,7 @@ def home():
 def predict():
 
     int_features = [int(x) for x in request.form.values()]
-    print("Valor: ",request.form.values())
     final_features = [np.array(int_features)]
-    print("final_features: ",final_features)
     prediction = model.predict(final_features)
 
     output = round(prediction[0], 2)
@@ -30,7 +28,3 @@ def predict():
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-#@app.route("/")
-#def hello_world():
-    #return "<p>Hello, World! cargo modelo</p>"
