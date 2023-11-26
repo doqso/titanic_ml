@@ -14,15 +14,16 @@
 
 <body style="background: #000;">
  <div class="login">
-	<h1>Sobrevivientes</h1>
+	<h1>Supervivientes</h1>
 
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
         <input type="text" name = "Ticket class" placeholder = "Ticket Class: 1 =1st, 2 =2nd, 3 =3rd" required="required" />
         <input type="text" name = "Sex" placeholder = "Sex: 1- Male, 2- Female" required="required" />
-    	<input type="text" name="age" placeholder="age" required="required" />
-        <input type="text" name="sibsp" placeholder="sibspnum: brother, sister, stepbrother, stepsister, husband, wife" required="required" />
-        <input type="text" name="parch" placeholder="parchnum: mother, father,daughter, son, stepdaughter, stepson" required="required" />
+    	<input type="text" name="age" placeholder="Age" required="required" />
+        <input type="text" name="sibsp" placeholder="Sibspnum: brother, sister, stepbrother, stepsister, husband, wife" required="required" />
+        <input type="text" name="parch" placeholder="Parchnum: mother, father,daughter, son, stepdaughter, stepson" required="required" />
+        <input type="text" name = "Fare" placeholder = "Fare: 120" required="required" />
         <button type="submit" class="btn btn-primary btn-block btn-large">¿Sobrevive o no?</button>
     </form>
 
